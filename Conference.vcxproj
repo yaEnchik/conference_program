@@ -128,6 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Conference.cpp" />
+    <ClCompile Include="file_reader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="conference_structure.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="file_reader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

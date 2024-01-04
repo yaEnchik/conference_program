@@ -1,13 +1,9 @@
 #ifndef CONFERENCE_STRUCTURE_H
 #define CONFERENCE_STRUCTURE_H
 
-#include "constants.h"
+#include <string>
 
-struct time
-{
-    int hour;
-    int minute;
-};
+#include "constants.h"
 
 struct person
 {
@@ -18,9 +14,9 @@ struct person
 
 struct conference_structure
 {
+    std::string startTime;
+    std::string endTime;
     person member;
-    time start;
-    time finish;
     char theme[MAX_STRING_SIZE];
 };
 
