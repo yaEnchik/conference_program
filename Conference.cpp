@@ -11,24 +11,23 @@ using namespace std;
 void output(conference_structure* conference)
 {
 	/**********   **********/
-    cout << conference->startTime << '\n';
-    cout << conference->endTime << '\n';
-    cout << conference->member.first_name << '\n';
-    cout << conference->member.last_name << '\n';
-    cout << conference->member.middle_name << '\n';
+    cout << conference->startTime << ' ';
+    cout << conference->endTime << ' ';
+    cout << conference->member.last_name << ' ';
+    cout << conference->member.first_name << ' ';
+    cout << conference->member.middle_name << ' ';
     cout << conference->theme;
     /**********   **********/
 	cout << '\n';
-	cout << '\n';
 }
-
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    cout << "Laboratory work #1. GIT\n";
-    cout << "Variant #2. Conference program\n";
-    cout << "Author: Yana Aniskova\n";
+    cout << "Лабораторная работа #1. GIT\n";
+    cout << "Вариант #2. Программа конференции\n";
+    cout << "Автор: Яна Аниськова\n";
+    cout << '\n';
     conference_structure* conferences[MAX_FILE_ROWS_COUNT];
     int size;
     try
@@ -37,17 +36,14 @@ int main()
         cout << "----------Все участники----------" << '\n';
         for (int i = 0; i < size; i++)
         {
-            cout << conferences[i]->startTime << '\n';
-            cout << conferences[i]->endTime << '\n';
-            cout << conferences[i]->member.last_name << '\n';
-            cout << conferences[i]->member.first_name << '\n';
-            cout << conferences[i]->member.middle_name << '\n';
-            cout << conferences[i]->theme << '\n';
-            cout << '\n';
+            output(conferences[i]);
         }
         cout << "--------------------------" << '\n';
         cout << "----------Сравнение по дате----------" << '\n';
-        cout << compare_by_time(conferences[2], conferences[1]) << '\n';
+        cout << compare_by_time(conferences[1], conferences[2]) << '\n';
+        cout << "--------------------------" << '\n';
+        cout << "----------Сравнение по фамилии----------" << '\n';
+        cout << compare_by_lastname(conferences[1], conferences[0]) << '\n';
         cout << "--------------------------" << '\n';
         int new_size;
         cout << "----------Фильтр по имени----------" << '\n';
@@ -65,6 +61,20 @@ int main()
             output(filteredByTime[i]);
         }
         delete[] filteredByTime;
+        cout << "--------------------------" << '\n';
+        cout << "----------Пирамидальная сортировка по фамилии----------" << '\n';
+        heapSort(conferences, size, compare_by_lastname);
+        for (int i = 0; i < size; i++)
+        {
+            output(conferences[i]);
+        }
+        cout << "--------------------------" << '\n';
+        cout << "----------Пирамидальная сортировка по времени----------" << '\n';
+        heapSort(conferences, size, compare_by_time);
+        for (int i = 0; i < size; i++)
+        {
+            output(conferences[i]);
+        }
         cout << "--------------------------" << '\n';
         for (int i = 0; i < size; i++)
         {
