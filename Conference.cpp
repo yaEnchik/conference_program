@@ -37,12 +37,6 @@ int main()
             output(conferences[i]);
         }
         cout << "--------------------------" << '\n';
-        cout << "----------Сравнение по дате----------" << '\n';
-        cout << compare_by_time(conferences[1], conferences[2]) << '\n';
-        cout << "--------------------------" << '\n';
-        cout << "----------Сравнение по фамилии----------" << '\n';
-        cout << compare_by_lastname(conferences[1], conferences[0]) << '\n';
-        cout << "--------------------------" << '\n';
         int new_size;
         cout << "----------Фильтр по имени----------" << '\n';
         conference_structure** filteredByName = filter(conferences, size, check_conference_by_name, new_size);
