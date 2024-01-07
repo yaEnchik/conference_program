@@ -6,6 +6,7 @@ using namespace std;
 #include "file_reader.h"
 #include "constants.h"
 #include "filter.h"
+#include "sort.h"
 
 void output(conference_structure* conference)
 {
@@ -45,7 +46,9 @@ int main()
             cout << '\n';
         }
         cout << "--------------------------" << '\n';
-
+        cout << "----------Сравнение по дате----------" << '\n';
+        cout << compare_by_time(conferences[2], conferences[1]) << '\n';
+        cout << "--------------------------" << '\n';
         int new_size;
         cout << "----------Фильтр по имени----------" << '\n';
         conference_structure** filteredByName = filter(conferences, size, check_conference_by_name, new_size);

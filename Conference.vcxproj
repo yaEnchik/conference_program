@@ -130,12 +130,14 @@
     <ClCompile Include="Conference.cpp" />
     <ClCompile Include="file_reader.cpp" />
     <ClCompile Include="filter.cpp" />
+    <ClCompile Include="sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="conference_structure.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="file_reader.h" />
     <ClInclude Include="filter.h" />
+    <ClInclude Include="sort.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />
