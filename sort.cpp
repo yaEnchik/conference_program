@@ -45,14 +45,66 @@ void heapify(conference_structure* array[], int n, int i, int (*check)(conferenc
     }
 }
 
-void heapSort(conference_structure* array[], int n, int (*check)(conference_structure* first, conference_structure* second))
+void heap_sort(conference_structure* array[], int size, int (*check)(conference_structure* first, conference_structure* second))
 {
-    for (int i = n / 2 - 1; i >= 0; i--)
-        heapify(array, n, i, check);
+    for (int i = size / 2 - 1; i >= 0; i--)
+        heapify(array, size, i, check);
 
-    for (int i = n - 1; i >= 0; i--)
+    for (int i = size - 1; i >= 0; i--)
     {
         swap(array[0], array[i]);
         heapify(array, i, 0, check);
+    }
+}
+
+void merge(conference_structure* arr[], int l, int m, int r, int (*check)(conference_structure* first, conference_structure* second)) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    conference_structure** L = new conference_structure * [n1];
+    conference_structure** R = new conference_structure * [n2];
+
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+
+    int i = 0, j = 0;
+
+    int k = l;
+    while (i < n1 && j < n2) {
+        if (check(L[i], R[j]) <= 0) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+
+    delete[] L;
+    delete[] R;
+}
+
+void merge_sort(conference_structure* array[], int l, int r, int (*check)(conference_structure* first, conference_structure* second)) {
+    if (l < r) {
+        int m = l + (r - l) / 2;
+        merge_sort(array, l, m, check);
+        merge_sort(array, m + 1, r, check);
+        merge(array, l, m, r, check);
     }
 }

@@ -10,14 +10,12 @@ using namespace std;
 
 void output(conference_structure* conference)
 {
-	/**********   **********/
     cout << conference->startTime << ' ';
     cout << conference->endTime << ' ';
     cout << conference->member.last_name << ' ';
     cout << conference->member.first_name << ' ';
     cout << conference->member.middle_name << ' ';
     cout << conference->theme;
-    /**********   **********/
 	cout << '\n';
 }
 
@@ -63,14 +61,28 @@ int main()
         delete[] filteredByTime;
         cout << "--------------------------" << '\n';
         cout << "----------Пирамидальная сортировка по фамилии----------" << '\n';
-        heapSort(conferences, size, compare_by_lastname);
+        heap_sort(conferences, size, compare_by_lastname);
         for (int i = 0; i < size; i++)
         {
             output(conferences[i]);
         }
         cout << "--------------------------" << '\n';
         cout << "----------Пирамидальная сортировка по времени----------" << '\n';
-        heapSort(conferences, size, compare_by_time);
+        heap_sort(conferences, size, compare_by_time);
+        for (int i = 0; i < size; i++)
+        {
+            output(conferences[i]);
+        }
+        cout << "--------------------------" << '\n';
+        cout << "----------Сортировка слиянием по фамилии----------" << '\n';
+        merge_sort(conferences, 0, size - 1, compare_by_lastname);
+        for (int i = 0; i < size; i++)
+        {
+            output(conferences[i]);
+        }
+        cout << "--------------------------" << '\n';
+        cout << "----------Сортировка слиянием по времени----------" << '\n';
+        merge_sort(conferences, 0, size - 1, compare_by_time);
         for (int i = 0; i < size; i++)
         {
             output(conferences[i]);
