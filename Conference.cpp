@@ -7,6 +7,7 @@ using namespace std;
 #include "constants.h"
 #include "filter.h"
 #include "sort.h"
+#include "processing.h"
 
 void output(conference_structure* conference)
 {
