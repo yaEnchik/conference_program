@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 
+#include "../conference_program/conference_structure.h"
+#include "../conference_program/processing.h"
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace unittests

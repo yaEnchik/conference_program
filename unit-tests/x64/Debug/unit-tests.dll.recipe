@@ -2,6 +2,9 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+      <FullPath>D:\programming\conference_program\conference_program\x64\Debug\Conference.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>D:\programming\conference_program\conference_program\x64\Debug\unit-tests.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
