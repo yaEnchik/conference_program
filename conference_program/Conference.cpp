@@ -83,6 +83,10 @@ int main()
             output(conferences[i]);
         }
         cout << "--------------------------" << '\n';
+        cout << "----------Поиск----------" << '\n';
+        conference_structure* longest_theme = get_longest_theme(conferences, size - 1, compare_by_time);
+        output(longest_theme);
+        cout << "--------------------------" << '\n';
         for (int i = 0; i < size; i++)
         {
             delete conferences[i];
