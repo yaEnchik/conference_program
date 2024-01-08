@@ -6,6 +6,8 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+
+
 namespace unittests
 {
 	conference_structure* build_conference(std::string startTime, std::string endTime) {
@@ -30,6 +32,8 @@ namespace unittests
 			conferences[0] = build_conference("11:00", "11:10"); // 10 минут 
 			conferences[1] = build_conference("14:00", "14:30"); // 30 минут
 			conferences[2] = build_conference("11:00", "11:05"); // 5 минут 
+			Assert::AreEqual(conferences[1], get_longest_theme(conferences, 3));
+			delete_conferences(conferences, 3);
 		}
 	};
 }

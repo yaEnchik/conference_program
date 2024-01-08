@@ -1,2 +1,18 @@
-﻿     Создается библиотека D:\programming\conference_program\conference_program\x64\Debug\unit-tests.lib и объект D:\programming\conference_program\conference_program\x64\Debug\unit-tests.exp
-  unit-tests.vcxproj -> D:\programming\conference_program\conference_program\x64\Debug\unit-tests.dll
+﻿  unit-tests.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\UnitTest\include\CppUnitTestAssert.h(69,81): error C2338: static_assert failed: 'Test writer must define specialization of ToString<Q* q> for your class class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > __cdecl Microsoft::VisualStudio::CppUnitTestFramework::ToString<struct conference_structure>(struct conference_structure *).'
+  (компиляция исходного файла "/unit-tests.cpp")
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\UnitTest\include\CppUnitTestAssert.h(69,81):
+  контекст создания экземпляра шаблона (сначала самый старый)
+  	D:\programming\conference_program\unit-tests\unit-tests.cpp(33,12):
+  	выполняется компиляция ссылки на экземпляр шаблон функции "void Microsoft::VisualStudio::CppUnitTestFramework::Assert::AreEqual<conference_structure*>(const T &,const T &,const wchar_t *,const Microsoft::VisualStudio::CppUnitTestFramework::__LineInfo *)"
+          with
+          [
+              T=conference_structure *
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\UnitTest\include\CppUnitTestAssert.h(141,40):
+  	выполняется компиляция ссылки на экземпляр шаблон функции "std::wstring Microsoft::VisualStudio::CppUnitTestFramework::ToString<conference_structure>(Q *)"
+          with
+          [
+              Q=conference_structure
+          ]
+  
