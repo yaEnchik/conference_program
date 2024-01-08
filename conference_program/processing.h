@@ -2,7 +2,8 @@
 #define PROCESSING_H
 
 #include "conference_structure.h"
+#include "sort.h"
 
-conference_structure* get_longest_theme(conference_structure* array[], int size, int (*check)(conference_structure* first, conference_structure* second));
+conference_structure* get_longest_theme(conference_structure* array[], int size);
 
 #endif
