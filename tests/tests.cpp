@@ -55,5 +55,15 @@ namespace tests
 			Assert::AreEqual(expected, get_longest_theme(conferences, 3));
 			delete_conferences(conferences, 3);
 		}
+		TEST_METHOD(TestMethod4)
+		{
+			conference_structure* conferences[3];
+			conferences[0] = build_conference("10:00", "11:05"); // 01:05 
+			conferences[1] = build_conference("14:00", "15:02"); // 01:02
+			conferences[2] = build_conference("11:00", "12:01"); // 01:01
+			std::string expected = "01:05";
+			Assert::AreEqual(expected, get_longest_theme(conferences, 3));
+			delete_conferences(conferences, 3);
+		}
 	};
 }
