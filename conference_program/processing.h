@@ -4,6 +4,6 @@
 #include "conference_structure.h"
 #include "sort.h"
 
-conference_structure* get_longest_theme(conference_structure* array[], int size);
+std::string get_longest_theme(conference_structure* array[], int size);
 
 #endif

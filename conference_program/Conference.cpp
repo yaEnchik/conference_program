@@ -84,8 +84,7 @@ int main()
         }
         cout << "--------------------------" << '\n';
         cout << "----------Поиск----------" << '\n';
-        conference_structure* longest_theme = get_longest_theme(conferences, size);
-        output(longest_theme);
+        cout << get_longest_theme(conferences, size) << "\n";
         cout << "--------------------------" << '\n';
         for (int i = 0; i < size; i++)
         {

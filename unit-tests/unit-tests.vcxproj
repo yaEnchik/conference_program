@@ -168,11 +168,14 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <ProjectReference Include="..\conference_program\Conference.vcxproj">
       <Project>{ae19ae32-d167-4da9-a7f1-aae86f57cfca}</Project>
     </ProjectReference>
   </ItemGroup>
+=======
+>>>>>>> dev
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
