@@ -14,6 +14,8 @@ std::string get_longest_theme(conference_structure* array[], int size) {
 	long S = ElapsedTime - (M * 60);  //Число секунд
 	long H = M / 60;                  //Число часов
 	M = M - (H * 60);            //Число минут
-	std::string result_string = H < 10 ? "0" + std::to_string(H) + ":" + std::to_string(M) : std::to_string(H) + ":" + std::to_string(M);
+	std::string hours = H < 10 ? "0" + std::to_string(H) : std::to_string(H);
+	std::string minutes = M < 10 ? "0" + std::to_string(M) : std::to_string(M);
+	std::string result_string = hours + ":" + minutes;
 	return result_string;
 }
